@@ -28,45 +28,11 @@
 // If you are given an array with multiple answers, return the lowest correct index.
 
 // Pseudo code
-// find middle arr index using arr.length and dividing it 
-// slice off first half and secod half of arr not including mid char 
-// add those sides together 
-// compare w if.. 
-
-// 1, 2, 3, 4, 5
-// 0, 1, 2, 3, 4
-
-// this solution only accounts for the middle arr index 
-// need to account for any index of arr that could make equal values on each side of it 
-// should I loop through and for every arr[i] compare both sides of it? 
-// 
-
-// function findEvenIndex(arr){
- 
-//   const arrMiddleIndex = (arr.length - 1) / 2
-
-//   const firstHalf = arr.slice(0, arrMiddleIndex)
-//   console.log(firstHalf)
-
-//   const firstHalfSum = firstHalf.reduce((t, c) => {
-//     return t + c
-//   }, 0)
-//   console.log(firstHalfSum)
-
-//   const secondHalf = arr.slice(arrMiddleIndex + 1)
-//   console.log(secondHalf)
-
-//   const secondHalfSum = secondHalf.reduce((t, c) => {
-//     return t + c
-//     }, 0)
-//   console.log(secondHalfSum)
-
-//   return firstHalfSum === secondHalfSum ? arrMiddleIndex : -1
-
-// }
-
-// console.log(findEvenIndex([6, -3, 3, 3, 0]))
-
+// walk through arr 
+// for every iteration slice off the left half 
+// and reduce it down to a single number 
+// and do the same w the right 
+// left half === right half ? return 1st index this is true (if theres mult) : -1 
 
 function findEvenIndex(arr){
 
